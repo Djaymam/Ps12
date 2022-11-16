@@ -1,18 +1,16 @@
-const express = require('express')
-const userController = require('./controllers')
+const express = require('express');
+const userController = require('./controllers');
 const loginController = require('./controllers/login_controllers');
 const auth = require('./middleware/auth');
-require('dotenv').config()
-
-
-
+const dotenv = require('dotenv');
 
 
 const app = express()
-const port = 3005
+//const port = 3005
 
 
 app.use(express.json())
+app.use(dotenv.config())
 
 
 //create user and password
@@ -32,6 +30,4 @@ app.put('/updateinfo/:id',userController.updateUser)
 app.delete(`/delete/:id`,userController.deleteUser)
 
 
-app.listen(3005, () => {
-  console.log(`App listening on http://localhost:${port}`);
-});
+app.listen(process.env.PORT|| 3005);
