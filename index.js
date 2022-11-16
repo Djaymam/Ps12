@@ -2,15 +2,14 @@ const express = require('express');
 const userController = require('./controllers');
 const loginController = require('./controllers/login_controllers');
 const auth = require('./middleware/auth');
-const dotenv = require('dotenv');
+require('dotenv').config();
 
 
 const app = express()
 //const port = 3005
 
-
 app.use(express.json())
-app.use(dotenv.config())
+
 
 
 //create user and password
