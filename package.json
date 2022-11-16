@@ -4,8 +4,7 @@
   "description": "ps12 api",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "run": "nodemon"
+    "test": "test"
   },
   "author": "Jaylson Almeida",
   "license": "ISC",
