@@ -2,6 +2,9 @@ const express = require('express')
 const userController = require('./controllers')
 const loginController = require('./controllers/login_controllers');
 const auth = require('./middleware/auth');
+require('dotenv').config()
+
+
 
 
 
