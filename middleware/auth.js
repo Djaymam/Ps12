@@ -7,7 +7,7 @@ module.exports = async (req, res, next) => {
     // const token = authToken.split(' ');
     // console.log('TOKEN', token[1]);
 
-    jwt.verify(authToken, "d3ddc7b93c75f7edc3fb6c8d04de8322e35cb6f8", function (err, decoded) {
+    jwt.verify(authToken,process.env.AUTH_KEY, function (err, decoded) {
         //console.log(err, decoded);
         if (err) {
             return res.status(401).json({

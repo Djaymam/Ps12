@@ -26,7 +26,7 @@ exports.userLogin = async (req,res)=>{
     res.status(200).json(
         {
             name:userinfo.user_name,
-            token:jwt.sign({ id:userinfo.id},"d3ddc7b93c75f7edc3fb6c8d04de8322e35cb6f8",{expiresIn: '1d'})
+            token:jwt.sign({ id:userinfo.id},process.env.AUTH_KEY,{expiresIn: '1d'})
 
         }
     )

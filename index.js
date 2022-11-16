@@ -11,7 +11,9 @@ const app = express()
 app.use(express.json())
 
 
-
+app.get('/',(req,res)=>{
+    res.status(200).send(" Available routes: /createuser || /login || /users || /updateinfo/:id || /delete/:id")
+})
 //create user and password
 app.post('/createuser', userController.createuser);
 //create session
