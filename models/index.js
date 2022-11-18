@@ -46,9 +46,9 @@ class user {
             const userEmail = await db.query("SELECT email FROM user_info WHERE email=$1",[email]);
             //console.log("email"+userEmail.rows[0]);
             if (!userEmail.rows[0]) {
-                return true;
-            } else {
                 return false;
+            } else {
+                return true;
             }
         } catch (error) {
             console.log(error)
@@ -61,9 +61,9 @@ class user {
             const user_Name = await db.query("SELECT user_name FROM user_info WHERE user_name=$1",[user_name]);
             //console.log("user_name"+user_Name.rows[0])
             if (!user_Name.rows[0]) {
-                return true;
-            } else {
                 return false;
+            } else {
+                return true;
             }
         
         } catch (error) {

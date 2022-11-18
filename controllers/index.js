@@ -27,11 +27,11 @@ exports.createuser = async (req, res) => {
     //console.log(checkEmail)
     //console.log(checkUserName)
 
-    if (!checkUserName) {
+    if (checkUserName==true) {
 
         return res.status(406).send("UserName already taken")
     }
-    if (!checkEmail) {
+    if (checkEmail==true) {
 
         return res.status(406).send("Email already taken")
     }
