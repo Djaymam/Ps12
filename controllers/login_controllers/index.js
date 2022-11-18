@@ -12,14 +12,14 @@ exports.userLogin = async (req,res)=>{
 
     if (!userinfo) {
         return res.status(401).json({
-            error: 'Wrong Email or Password'
+            error: 'Wrong Email'
         })
     }
 
     const passwordValidation = await userModel.loginPassword(password, userinfo.password);
     if (!passwordValidation) {
         return res.status(401).json({
-            error: 'Wrong Email or Password'
+            error: 'Wrong  Password'
         })
     }
 

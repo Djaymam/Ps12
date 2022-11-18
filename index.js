@@ -31,4 +31,4 @@ app.put('/updateinfo/:id',userController.updateUser)
 app.delete(`/delete/:id`,userController.deleteUser)
 
 
-app.listen(process.env.PORT|| 3005);
+app.listen(process.env.PORT|| 3005,()=>{console.log(process.env.PORT)});
