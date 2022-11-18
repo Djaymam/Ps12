@@ -21,15 +21,19 @@ exports.createuser = async (req, res) => {
     const encryptPassword = await bcrypt.hash(result.password,5)
     //console.log(encryptPassword)
     const checkEmail = await userModel.checkemail(result.email);
-    console.log(checkEmail)
+    //console.log(checkEmail)
     const checkUserName = await userModel.checkName(result.user_name);
     //console.log(email)
     //console.log(checkEmail)
     //console.log(checkUserName)
 
-    if (!checkUserName || !checkEmail) {
+    if (!checkUserName) {
 
-        return res.status(406).send("UserName or Email already taken")
+        return res.status(406).send("UserName already taken")
+    }
+    if (!checkEmail) {
+
+        return res.status(406).send("Email already taken")
     }
 
     const user = await userModel.creatUser(result.name,result.user_name,result.email,encryptPassword);
