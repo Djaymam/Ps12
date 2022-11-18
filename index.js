@@ -1,15 +1,14 @@
 const express = require('express');
+require('dotenv').config();
 const userController = require('./controllers');
 const loginController = require('./controllers/login_controllers');
 const auth = require('./middleware/auth');
-require('dotenv').config();
 
 
 const app = express()
 //const port = 3005
 
 app.use(express.json())
-
 
 app.get('/',(req,res)=>{
     res.status(200).send(" Available routes: /createuser || /login || /users || /updateinfo/:id || /delete/:id")

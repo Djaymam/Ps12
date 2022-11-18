@@ -19,11 +19,13 @@ exports.createuser = async (req, res) => {
     const result = await dataSchema.validateAsync(req.body)
     //console.log(result)
     const encryptPassword = await bcrypt.hash(result.password,5)
+    //console.log(encryptPassword)
     const checkEmail = await userModel.checkemail(result.email);
+    console.log(checkEmail)
     const checkUserName = await userModel.checkName(result.user_name);
     //console.log(email)
-   //console.log(checkEmail)
-   //console.log(checkUserName)
+    //console.log(checkEmail)
+    //console.log(checkUserName)
 
     if (!checkUserName || !checkEmail) {
 

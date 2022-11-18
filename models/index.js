@@ -41,7 +41,7 @@ class user {
         }
     }
     static async checkemail(email){
-
+        console.log(email)
         try {
             const userEmail = await db.query("SELECT email FROM user_info WHERE email=$1",[email]);
             //console.log("email"+userEmail.rows[0]);
